@@ -7,6 +7,9 @@ public class World : MonoBehaviour {
     public static readonly int width = 64;
     public static readonly int height = 64;
 
+    [SerializeField]
+    private int seed = 0;
+
     private Tile[,] grid = new Tile[width, height];
 
     private Dictionary<int, Tile> mappedTiles = new Dictionary<int, Tile>();
@@ -58,10 +61,14 @@ public class World : MonoBehaviour {
 
     private void GenerateWorld() {
         Debug.Log("Geenerating World");
+        FastNoise noise = new FastNoise(seed);
         for(int x = 0; x < width; x++) {
             for(int y = 0; y < height; y++) {
-                grid[x, y] = Instantiate(mappedTiles[0]);
-                grid[x, y].transform.position = new Vector3(x, 0, y);
+                float simplex = (noise.GetSimplexFractal(x * 4, y * 4) * 20) + 2;
+                int index = Mathf.RoundToInt(simplex);
+                index = index < -8 ? -8 : index > 12 ? 12 : index;
+                grid[x, y] = Instantiate(mappedTiles[index]);
+                grid[x, y].transform.position = new Vector3(x, 0.125f * grid[x, y].heightScale * simplex, y);
             }
         }
     }

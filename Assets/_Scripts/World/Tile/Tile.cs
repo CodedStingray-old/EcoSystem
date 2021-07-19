@@ -6,6 +6,8 @@ public abstract class Tile : MonoBehaviour {
 
     private Vector2Int gridPosition;
 
+    public float heightScale = 1;
+
     public Vector2Int GridPosition {
         get => gridPosition;
         set {

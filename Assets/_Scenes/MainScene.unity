@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441c6447451379146bf6ddbb8dc241e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seed: 0
   tileWaterPrefab: {fileID: 6345966240868330952, guid: 9b09212e150f2244cb242c9ea761fe5a, type: 3}
   tileShallowWaterPrefab: {fileID: -9104007128479022890, guid: cf1544671c9fc524ca878d6244cbd153, type: 3}
   tileSandPrefab: {fileID: 8336803053696058491, guid: b39baf554de8bc74fb35b15e51f601de, type: 3}
@@ -572,8 +573,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738646680695097196}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6, y: 4.8999996, z: 0}
+  m_LocalRotation: {x: 0.2841189, y: 0.27286676, z: -0.08470729, w: 0.91522944}
+  m_LocalPosition: {x: 1.6585612, y: 24.754665, z: -12.555681}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -591,6 +592,7 @@ GameObject:
   - component: {fileID: 738646680695097199}
   - component: {fileID: 738646680695097197}
   - component: {fileID: 738646680695097198}
+  - component: {fileID: 738646680695097200}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -763,3 +765,44 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &738646680695097200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738646680695097196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e519c409be4a1428028347410f5677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boost: 3.5
+  positionLerpTime: 0.2
+  mouseSensitivityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationLerpTime: 0.01
+  invertY: 0
+  paused: 0
